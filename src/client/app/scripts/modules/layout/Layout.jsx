@@ -7,22 +7,16 @@ import Sidebar from 'scripts/modules/layout/Sidebar.jsx';
 
 const Layout = (props) => {
   return (
-    <div>
+    <div className = "app-wrapper">
       <div>
         <Navbar />
       </div>
-        <div className = "row">
-          <div className = "col-sm-3">
-            <div className = "sidebar-wrapper">
-              <Sidebar />
-            </div>
-          </div>
-          <div className = "col-sm-9">
-            <div className = "content-wrapper">
-              {props.children}
-            </div>
-          </div>
-        </div>
+      <div className = "sidebar-wrapper">
+        <Sidebar />
+      </div>
+      <div className = "content-wrapper">
+        {props.children}
+      </div>
     </div>
   );
 };
