@@ -9,8 +9,14 @@
 
 .sidebar-main {
   border: 1px solid;
+  position: relative;
+  height: 60%;
+}
+
+.sidebar {
+  postion: fixed;
 }
 
 .content-wrapper {
-  border : 1px solid;
+  border: 1px solid;
 }
