@@ -6,7 +6,14 @@ import React from 'react';
 const Sidebar = () => (
   <div className = "sidebar-main">
     <div className = "sidebar">
-      Sidebar
+      <ul className = "sidebar-ul">
+        <li className = "sidebar-li">
+          Single Source News
+        </li>
+        <li className = "sidebar-li">
+          News Feed
+        </li>
+      </ul>
     </div>
   </div>
 );

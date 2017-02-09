@@ -20,3 +20,17 @@
 .content-wrapper {
   border: 1px solid;
 }
+
+ul.sidebar-ul {
+  li.sidebar-li {
+    display: block;
+    &:hover {
+      background: #dbd8d8;
+      cursor: pointer;
+    }
+  }
+}
+
+.sidebar-wrapper {
+  padding: 0 20%;
+}

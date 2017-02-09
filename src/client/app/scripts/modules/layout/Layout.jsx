@@ -13,7 +13,9 @@ const Layout = (props) => {
       </div>
         <div className = "row">
           <div className = "col-sm-3">
-            <Sidebar />
+            <div className = "sidebar-wrapper">
+              <Sidebar />
+            </div>
           </div>
           <div className = "col-sm-9">
             <div className = "content-wrapper">
