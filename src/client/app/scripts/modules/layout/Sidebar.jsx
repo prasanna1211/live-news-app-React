@@ -4,9 +4,9 @@
 import React from 'react';
 
 const Sidebar = () => (
-  <nav>
+  <div className = "sidebar-main">
     Sidebar
-  </nav>
+  </div>
 );
 
 export default Sidebar;
