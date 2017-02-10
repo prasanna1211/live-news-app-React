@@ -1,11 +1,8 @@
-import { takeLatest } from 'redux-saga/effects';
+import { fork } from 'redux-saga/effects';
 
-function* rootAction() {
-  yield 1;
+import selectActiveNewsSaga from 'scripts/modules/layout/sagas/selectActiveNewsSaga.js';
+
+export default function* rootSaga() {
+  yield fork(selectActiveNewsSaga);
 }
 
-function* rootSaga() {
-  yield takeLatest('DUMMY_ACTION', rootAction);
-}
-
-export default rootSaga;

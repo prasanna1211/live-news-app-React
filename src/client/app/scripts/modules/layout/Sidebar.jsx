@@ -2,12 +2,15 @@
  * Sidebar component
  */
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { selectNewsType } from './actionCreators/index.js';
 
-const Sidebar = () => (
+const Sidebar = (props) => (
   <div className="sidebar-main">
     <div className="sidebar">
       <ul className="sidebar-ul">
-        <li className="sidebar-li">
+        <li onClick = { () => { props.selectNewsType("singleSource") } } className="sidebar-li">
           Single Source News
         </li>
         <li className="sidebar-li">
@@ -21,4 +24,15 @@ const Sidebar = () => (
   </div>
 );
 
-export default Sidebar;
+const mapStateToProps = (state) => {
+  return {
+
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectNewsType: bindActionCreators(selectNewsType, dispatch)
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
