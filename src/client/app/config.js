@@ -3,5 +3,9 @@
  */
 
 const baseUrl = {
-  newsApi : 'https://newsapi.org/v1/'
+  newsApi: 'https://newsapi.org/v1/',
+};
+
+export {
+  baseUrl,
 };

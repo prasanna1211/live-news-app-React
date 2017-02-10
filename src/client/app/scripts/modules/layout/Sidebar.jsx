@@ -4,16 +4,16 @@
 import React from 'react';
 
 const Sidebar = () => (
-  <div className = "sidebar-main">
-    <div className = "sidebar">
-      <ul className = "sidebar-ul">
-        <li className = "sidebar-li">
+  <div className="sidebar-main">
+    <div className="sidebar">
+      <ul className="sidebar-ul">
+        <li className="sidebar-li">
           Single Source News
         </li>
-        <li className = "sidebar-li">
+        <li className="sidebar-li">
           News Feed
         </li>
-        <li className = "sidebar-li">
+        <li className="sidebar-li">
           Others
         </li>
       </ul>

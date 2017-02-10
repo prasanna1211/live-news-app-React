@@ -7,14 +7,14 @@ import Sidebar from 'scripts/modules/layout/Sidebar.jsx';
 
 const Layout = (props) => {
   return (
-    <div className = "app-wrapper">
+    <div className="app-wrapper">
       <div>
         <Navbar />
       </div>
-      <div className = "sidebar-wrapper">
+      <div className="sidebar-wrapper">
         <Sidebar />
       </div>
-      <div className = "content-wrapper">
+      <div className="content-wrapper">
         {props.children}
       </div>
     </div>
