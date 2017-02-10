@@ -7,37 +7,48 @@
 }
 
 .sidebar-wrapper {
+  top: 3.1em;
   position: fixed;
-  border: 1px solid;
   width: 30%;
   height: 40%;
 }
 
 .content-wrapper {
+  top: 3.1em;
   position: absolute;
   border: 1px solid orange;
   left: 35%;
+  width: 65%;
 }
 
 .navbar-main {
-  border: 1px solid;
   line-height: 3em;
-  background: #dad4f2;
+  background: #00b8ff;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 .sidebar-main {
-  border: 1px solid red;
   margin: 10% 20% 10% 20%;
 }
 
 ul.sidebar-ul {
-  padding: 5% 5% 5% 5%;
+  padding: 0;
+  margin: 0;
   li.sidebar-li {
     display: block;
+    border: 1px solid #5c5c5c;
+    border-radius: 3px;
+    background: #ffffff;
+    padding: 5px;
     &:hover {
-      background: #dbd8d8;
+      background: #00b8ff;
       cursor: pointer;
     }
   }
 }
 
+.content {
+  margin: 10%;
+}

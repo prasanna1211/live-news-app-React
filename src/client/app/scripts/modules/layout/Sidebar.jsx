@@ -13,6 +13,9 @@ const Sidebar = () => (
         <li className = "sidebar-li">
           News Feed
         </li>
+        <li className = "sidebar-li">
+          Others
+        </li>
       </ul>
     </div>
   </div>

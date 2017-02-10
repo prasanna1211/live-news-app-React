@@ -4,9 +4,9 @@
 import React from 'react';
 
 const Navbar = () => (
-  <div className = "navbar-main">
+  <nav className = "navbar-main">
     Navbars
-  </div>
+  </nav>
 );
 
 export default Navbar;
