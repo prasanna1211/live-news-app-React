@@ -5,6 +5,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectActiveNewsType } from './actionCreators/index.js';
+import { getActiveNewsType } from './selectors/selector.js';
 
 const Sidebar = props => (
   <div className="sidebar-main">
@@ -30,7 +31,7 @@ Sidebar.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    activeNewsType: state.get('layoutModuleReducer').get('selectActiveNewsReducer').get('activeNewsType'),
+    activeNewsType: getActiveNewsType(state),
   };
 };
 const mapDispatchToProps = (dispatch) => {
