@@ -4,7 +4,7 @@ function* selectActiveNewsAction() {
   try {
     yield put({ type: 'SELECT_ACTIVE_NEWS_SUCCESS' });
   } catch (error) {
-    yield put({ type: 'SELECT_ACTIVE_NEWS_FAILED' });
+    yield put({ type: 'SELECT_ACTIVE_NEWS_FAILURE' });
   }
 }
 
