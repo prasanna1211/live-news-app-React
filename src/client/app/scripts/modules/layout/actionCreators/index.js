@@ -1,4 +1,4 @@
-import selectActiveNewsType from './selectActiveNewsType.js';
+import { selectActiveNewsType } from './selectActiveNewsType.js';
 
 export {
   selectActiveNewsType,
