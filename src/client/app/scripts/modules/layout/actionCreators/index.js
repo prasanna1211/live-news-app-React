@@ -1,12 +1,5 @@
-const selectNewsType = (selectedNewsType) => {
-  return {
-    type: 'SELECT_ACTIVE_NEWS_REQUEST',
-    payload: {
-      selectedNewsType,
-    },
-  };
-};
+import selectActiveNewsType from './selectActiveNewsType.js';
 
 export {
-  selectNewsType,
+  selectActiveNewsType,
 };
