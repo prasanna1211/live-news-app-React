@@ -1,10 +1,10 @@
 /*
- *  Root Reducer
+ *  Root Reducer - Include reducers of all modules here
  */
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 
-const defaultReducer = () => 'default';
+var defaultReducer = () => 'default';
 
 export default combineReducers({
-  defaultReducer,
+  defaultReducer
 });
