@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectActiveNewsType } from './actionCreators/index.js';
 
-const Sidebar = (props) => (
+const Sidebar = props => (
   <div className="sidebar-main">
     <div className="sidebar">
       <ul className="sidebar-ul">
@@ -28,9 +28,9 @@ Sidebar.propTypes = {
   selectActiveNewsType: React.PropTypes.func.isRequired,
 };
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
   return {
-
+    activeNewsType: state.get('layoutModuleReducer').get('selectActiveNewsReducer').get('activeNewsType'),
   };
 };
 const mapDispatchToProps = (dispatch) => {

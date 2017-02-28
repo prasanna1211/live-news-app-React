@@ -1,8 +1,8 @@
 import { takeEvery, put } from 'redux-saga/effects';
 
-function* selectActiveNewsAction() {
+function* selectActiveNewsAction(action) {
   try {
-    yield put({ type: 'SELECT_ACTIVE_NEWS_SUCCESS' });
+    yield put({ type: 'SELECT_ACTIVE_NEWS_SUCCESS', payload: action.payload });
   } catch (error) {
     yield put({ type: 'SELECT_ACTIVE_NEWS_FAILURE' });
   }

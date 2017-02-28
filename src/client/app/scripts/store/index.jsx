@@ -20,7 +20,6 @@ const sagaMiddleware = createSagaMiddleware();
  */
 const store = createStore(rootReducer, Immutable.Map(), applyMiddleware(sagaMiddleware, thunk, reduxLogger));
 
-console.log(store.getState().toJS());
 // start running saga, to watch all actions
 sagaMiddleware.run(rootSaga);
 
