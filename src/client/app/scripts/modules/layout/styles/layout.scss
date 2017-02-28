@@ -42,7 +42,7 @@ ul.sidebar-ul {
     border-radius: 3px;
     background: #ffffff;
     padding: 5px;
-    &:hover {
+    &:hover, &.active {
       background: #00b8ff;
       cursor: pointer;
     }

@@ -11,13 +11,22 @@ const Sidebar = props => (
   <div className="sidebar-main">
     <div className="sidebar">
       <ul className="sidebar-ul">
-        <li onClick={() => { props.selectActiveNewsType('singleSource'); }} className="sidebar-li">
+        <li
+          onClick={() => { props.selectActiveNewsType('singleSource'); }}
+          className={`sidebar-li ${(props.activeNewsType === 'singleSource') ? 'active' : ''}`}
+        >
           Single Source News
         </li>
-        <li onClick={() => { props.selectActiveNewsType('newsFeed'); }} className="sidebar-li">
+        <li
+          onClick={() => { props.selectActiveNewsType('newsFeed'); }}
+          className={`sidebar-li ${(props.activeNewsType === 'newsFeed') ? 'active' : ''}`}
+        >
           News Feed
         </li>
-        <li onClick={() => { props.selectActiveNewsType('others'); }} className="sidebar-li">
+        <li
+          onClick={() => { props.selectActiveNewsType('others'); }}
+          className={`sidebar-li ${(props.activeNewsType === 'others') ? 'active' : ''}`}
+        >
           Others
         </li>
       </ul>
@@ -27,6 +36,11 @@ const Sidebar = props => (
 
 Sidebar.propTypes = {
   selectActiveNewsType: React.PropTypes.func.isRequired,
+  activeNewsType: React.PropTypes.string,
+};
+
+Sidebar.defaultProps = {
+  activeNewsType: '',
 };
 
 const mapStateToProps = (state) => {
