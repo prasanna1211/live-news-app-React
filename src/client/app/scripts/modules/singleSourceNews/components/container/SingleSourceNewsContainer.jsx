@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SourceSelect from '../presentational/SourceSelect.jsx';
 import NewsFeed from '../presentational/NewsFeed.jsx';
-import { sourceFetchActionCreators } from '../../actionCreators/actionCreators.js';
+import { sourceFetchActionCreators, newsFetchActionCreators } from '../../actionCreators/actionCreators.js';
 import { getSourceList, getSourceListInitiatedStatus, getSourceListSuccessStatus } from '../../selectors/selectors.js';
 
 class SingleSourceNewsContainer extends React.Component {
@@ -24,6 +24,7 @@ class SingleSourceNewsContainer extends React.Component {
   componentWillUpdate(nextProps, nextState) {
     if (this.state.activeSource !== nextState.activeSource) {
       // Fetch the news of this source
+      this.props.newsFetchAction(nextState.activeSource, 'top');
     }
   }
 
@@ -63,6 +64,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     sourceFetchAction: bindActionCreators(sourceFetchActionCreators, dispatch),
+    newsFetchAction: bindActionCreators(newsFetchActionCreators, dispatch),
   };
 };
 
