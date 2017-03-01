@@ -1,14 +1,34 @@
+/**
+ * Selectbox component providing callback for onChange
+ */
+
 import React from 'react';
+import _ from 'underscore';
 
-class FormInputSelectbox extends React.Component {
-  render() {
+/**
+ * Renders the options
+ */
+const RenderOptions = (props) => {
+  return _.map(props.options, (option) => {
     return (
-      <select>
-        <option value="a">a</option>
-        <option value="b">c</option>
-      </select>
+      <option
+        key={option.value}
+        value={option.value}
+      >
+        {option.name}
+      </option>
     );
-  }
-}
+  });
+};
 
-export default FormInputSelectbox;
+const Selectbox = props => (
+  <select onChange={props.onChangeSelectbox}>
+    {RenderOptions(props)}
+  </select>
+);
+
+Selectbox.propTypes = {
+  onChangeSelectbox: React.PropTypes.func.isRequired,
+};
+
+export default Selectbox;

@@ -11,15 +11,15 @@ class SingleSourceNewsContainer extends React.Component {
       activeSource: '',
     };
     this.options = [
-      { key: 'a', value: 'a' },
-      { key: 'b', value: 'b' },
+      { name: 'a', value: 'a' },
+      { name: 'b', value: 'b' },
     ];
     this.onChangeSource = this.onChangeSource.bind(this);
   }
 
-  onChangeSource(activeSource) {
+  onChangeSource(event) {
     this.setState({
-      activeSource,
+      activeSource: event.target.value,
     });
   }
 
