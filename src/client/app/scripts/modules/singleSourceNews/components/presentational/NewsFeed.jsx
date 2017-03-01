@@ -10,7 +10,7 @@ const renderNews = (props) => {
   ));
 };
 
-const NewsFeed = (props) => (
+const NewsFeed = props => (
   <div>
     { renderNews(props) }
   </div>
@@ -18,6 +18,6 @@ const NewsFeed = (props) => (
 
 NewsFeed.propTypes = {
   newsData: React.PropTypes.object.isRequired,
-}
+};
 
 export default NewsFeed;
