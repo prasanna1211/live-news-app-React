@@ -1,8 +1,9 @@
 import React from 'react';
+import SingleSourceNewsContainer from './components/container/SingleSourceNewsContainer.jsx';
 
 const SingleSourceNews = () => (
   <div>
-    Single Source News
+    <SingleSourceNewsContainer />
   </div>
 );
 
