@@ -4,8 +4,8 @@
 import React from 'react';
 
 const Navbar = () => (
-  <nav>
-    Navbar
+  <nav className="navbar-main">
+    Navbars
   </nav>
 );
 

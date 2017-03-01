@@ -4,7 +4,7 @@
 import React from 'react';
 
 const App = () => (
-  <div>
+  <div className="content">
     Successfully loaded React Project
   </div>
 );

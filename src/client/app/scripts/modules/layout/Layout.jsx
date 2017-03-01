@@ -5,16 +5,18 @@ import React from 'react';
 import Navbar from 'scripts/modules/layout/Navbar.jsx';
 import Sidebar from 'scripts/modules/layout/Sidebar.jsx';
 
+require('scripts/modules/layout/styles/layout.scss');
+
 const Layout = (props) => {
   return (
-    <div>
+    <div className="app-wrapper">
       <div>
         <Navbar />
       </div>
-      <div>
+      <div className="sidebar-wrapper">
         <Sidebar />
       </div>
-      <div>
+      <div className="content-wrapper">
         {props.children}
       </div>
     </div>
