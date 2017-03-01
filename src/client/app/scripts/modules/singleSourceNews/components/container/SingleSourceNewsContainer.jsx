@@ -42,7 +42,9 @@ class SingleSourceNewsContainer extends React.Component {
           onChangeSource={this.onChangeSource}
           options={this.props.sourceList}
         />
-        <NewsFeed />
+        <NewsFeed
+          newsData={this.props.newsData}
+        />
       </div>
     );
   }
@@ -51,6 +53,8 @@ class SingleSourceNewsContainer extends React.Component {
 SingleSourceNewsContainer.propTypes = {
   sourceFetchAction: React.PropTypes.func.isRequired,
   sourceList: React.PropTypes.array.isRequired,
+  newsFetchAction: React.PropTypes.func.isRequired,
+  newsData: React.PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => {
