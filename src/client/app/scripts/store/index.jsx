@@ -12,7 +12,7 @@ import Immutable from 'immutable';
 // Logger for redux actions and actioncreators on console
 const reduxLogger = createLogger({
   stateTransformer: state => JSON.parse(JSON.stringify(state)),
-});;
+});
 // sagamiddleware to include in the store
 const sagaMiddleware = createSagaMiddleware();
 

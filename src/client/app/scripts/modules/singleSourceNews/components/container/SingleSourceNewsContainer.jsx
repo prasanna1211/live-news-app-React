@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import SourceSelect from '../presentational/SourceSelect.jsx';
 import NewsFeed from '../presentational/NewsFeed.jsx';
 import { sourceFetchActionCreators } from '../../actionCreators/actionCreators.js';
-import { getSourceList } from '../../selectors/selectors.js';
+import { getSourceList, getSourceListInitiatedStatus, getSourceListSuccessStatus } from '../../selectors/selectors.js';
 
 class SingleSourceNewsContainer extends React.Component {
 
@@ -19,6 +19,12 @@ class SingleSourceNewsContainer extends React.Component {
 
   componentDidMount() {
     this.props.sourceFetchAction();
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if (this.state.activeSource !== nextState.activeSource) {
+      // Fetch the news of this source
+    }
   }
 
   onChangeSource(event) {
@@ -49,6 +55,8 @@ SingleSourceNewsContainer.propTypes = {
 const mapStateToProps = (state) => {
   return {
     sourceList: getSourceList(state),
+    sourceListApicallInitiated: getSourceListInitiatedStatus(state),
+    sourceListApicallSuccess: getSourceListSuccessStatus(state),
   };
 };
 

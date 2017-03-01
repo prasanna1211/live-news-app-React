@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewsFeed = props => (
+const NewsFeed = () => (
   <div>
     Main news page
   </div>
