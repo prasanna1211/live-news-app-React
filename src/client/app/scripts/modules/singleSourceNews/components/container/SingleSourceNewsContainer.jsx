@@ -1,6 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import SourceSelect from '../presentational/SourceSelect.jsx';
 import NewsFeed from '../presentational/NewsFeed.jsx';
+import {sourceFetchActionCreators} from '../../actionCreators/actionCreators.js';
 
 class SingleSourceNewsContainer extends React.Component {
 
@@ -15,6 +18,11 @@ class SingleSourceNewsContainer extends React.Component {
       { name: 'b', value: 'b' },
     ];
     this.onChangeSource = this.onChangeSource.bind(this);
+  }
+
+  componentDidMount() {
+    // Fetch list of sources
+    this.props.sourceFetchAction();
   }
 
   onChangeSource(event) {
@@ -37,4 +45,16 @@ class SingleSourceNewsContainer extends React.Component {
   }
 }
 
-export default SingleSourceNewsContainer;
+const mapStateToProps = (state) => {
+  return {
+
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sourceFetchAction: bindActionCreators(sourceFetchActionCreators, dispatch),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleSourceNewsContainer);
