@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import SourceSelect from '../presentational/SourceSelect.jsx';
 import NewsFeed from '../presentational/NewsFeed.jsx';
 import { sourceFetchActionCreators, newsFetchActionCreators } from '../../actionCreators/actionCreators.js';
-import { getSourceList, getSourceListInitiatedStatus, getSourceListSuccessStatus } from '../../selectors/selectors.js';
+import { getSourceList, getSourceListInitiatedStatus, getSourceListSuccessStatus, getNewsData, getNewsInitiatedStatus, getNewsSuccessStatus } from '../../selectors/selectors.js';
 
 class SingleSourceNewsContainer extends React.Component {
 
@@ -58,6 +58,9 @@ const mapStateToProps = (state) => {
     sourceList: getSourceList(state),
     sourceListApicallInitiated: getSourceListInitiatedStatus(state),
     sourceListApicallSuccess: getSourceListSuccessStatus(state),
+    newsApicallInitiated: getNewsInitiatedStatus(state),
+    newsApiCallSuccess: getNewsSuccessStatus(state),
+    newsData: getNewsData(state),
   };
 };
 
