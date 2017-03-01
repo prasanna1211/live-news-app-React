@@ -3,6 +3,7 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 import { sourcesApi } from '../../../helpers/api.js';
 
 function* sourceListFetchAction() {
+  yield put({ type: 'SOURCE_LIST_FETCH_INITIATED' });
   try {
     const sourceList = yield call(request.get, sourcesApi);
     yield put({
@@ -17,6 +18,7 @@ function* sourceListFetchAction() {
       type: 'SOURCE_LIST_FETCH_FAILURE',
       payload: {
         success: 'false',
+        error,
       },
     });
   }
