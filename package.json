@@ -7,7 +7,8 @@
     "lint": "eslint ./ --ext .jsx --ext .js || true",
     "watch": "webpack -d --watch",
     "build": "webpack -p",
-    "start": "webpack-dev-server --hot --inline --content-base ./src/client --port 3000"
+    "start": "webpack-dev-server --hot --inline --content-base ./src/client --port 3000",
+    "test": "mocha src/client/app/scripts/modules/singleSourceNews/test --compilers js:babel-core/register"
   },
   "author": "",
   "license": "ISC",
@@ -45,13 +46,16 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-preset-stage-3": "^6.22.0",
     "css-loader": "^0.25.0",
+    "enzyme": "^2.7.1",
     "eslint": "^3.15.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "file-loader": "^0.9.0",
+    "mocha": "^3.2.0",
     "node-sass": "^3.10.1",
+    "react-addons-test-utils": "^15.4.2",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1"
   }
