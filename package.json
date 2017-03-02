@@ -8,7 +8,7 @@
     "watch": "webpack -d --watch",
     "build": "webpack -p",
     "start": "webpack-dev-server --hot --inline --content-base ./src/client --port 3000",
-    "test": "NODE_PATH=./src/client/app mocha src/client/app/scripts/modules/**/test/**.js --compilers js:babel-core/register --require ignore-styles"
+    "test": "npm run lint && NODE_PATH=./src/client/app mocha src/client/app/scripts/modules/**/test/**.js --compilers js:babel-core/register --require ignore-styles"
   },
   "author": "",
   "license": "ISC",
