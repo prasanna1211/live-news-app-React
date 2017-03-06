@@ -40,6 +40,7 @@ export class SingleSourceNewsContainer extends React.Component {
         <SourceSelect
           onChangeSource={this.onChangeSource}
           options={this.props.sourceList}
+          sourceListApicallInitiated={this.props.sourceListApicallInitiated}
         />
         <NewsFeed
           newsData={this.props.newsData}
@@ -57,10 +58,12 @@ SingleSourceNewsContainer.propTypes = {
     React.PropTypes.array,
     React.PropTypes.object,
   ]),
+  sourceListApicallInitiated: React.PropTypes.bool,
 };
 
 SingleSourceNewsContainer.defaultProps = {
   newsData: [],
+  sourceListApicallInitiated: false,
 };
 
 export const mapStateToProps = (state) => {

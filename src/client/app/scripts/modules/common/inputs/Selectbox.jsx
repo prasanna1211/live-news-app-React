@@ -41,7 +41,11 @@ class Selectbox extends React.Component {
 
   render() {
     return (
-      <select onChange={this.onChangeSelect} value={this.state.value}>
+      <select
+        onChange={this.onChangeSelect}
+        value={this.state.value}
+        className={this.props.className}
+      >
         {RenderOptions(this.props)}
       </select>
     );
@@ -50,6 +54,11 @@ class Selectbox extends React.Component {
 
 Selectbox.propTypes = {
   onChangeSelectbox: React.PropTypes.func.isRequired,
+  className: React.PropTypes.string,
+};
+
+Selectbox.defaultProps = {
+  className: '',
 };
 
 export default Selectbox;

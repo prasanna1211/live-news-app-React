@@ -18,7 +18,7 @@ export const sourceListReducer = (state = initialState, { type, payload }) => {
     case 'SOURCE_LIST_FETCH_SUCCESS': {
       let newState = state;
       newState = newState.set('data', payload);
-      newState = newState.set('sourceListFetchInitiated', true);
+      newState = newState.set('sourceListFetchInitiated', false);
       newState = newState.set('sourceListFetchSuccess', true);
       return newState;
     }
