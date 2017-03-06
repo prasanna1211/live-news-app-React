@@ -3,7 +3,7 @@ import Selectbox from '../../../common/inputs/Selectbox.jsx';
 
 const SourceSelect = props => (
   <div className="source-select">
-    Selecting source
+    <h4>Select source</h4>
     <Selectbox
       options={props.options}
       onChangeSelectbox={props.onChangeSource}

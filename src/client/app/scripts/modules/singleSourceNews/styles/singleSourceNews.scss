@@ -1,5 +1,15 @@
+@import '../../../../styles/bootstrapcss/bootstrap.css';
+
 .content {
   float: left;
   width: 70%;
   margin-left: 5em;
+}
+
+.source-select {
+  margin-top: 2em;
+  h4 {
+    color: #1a1c4b;
+    font-weight: bold;
+  }
 }

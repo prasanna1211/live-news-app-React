@@ -11,17 +11,23 @@ header {
 .sidebar-main {
   float: left;
   width: 15%;
-  border: 1px solid;
+  margin-top: 2em;
   ul {
     list-style-type: none;
-    li:hover {
-      background: #1a1c4b;
-      opacity: 0.5;
-      color: white;
-      pointer-events: auto;
+    li {
+      border: 0.5px solid;
+      border-radius: 3px;
+      &:hover {
+        background: #1a1c4b;
+        opacity: 0.5;
+        color: white;
+        cursor: pointer;
+      }
     }
   }
 }
 
-
+.sidebar-li {
+  padding: 1em;
+}
 
