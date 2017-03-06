@@ -10,8 +10,14 @@ import NewsFeed from '../components/presentational/NewsFeed.jsx';
 
 describe(' <NewsFeed /> Component ', () => {
   it(' renders <NewsBlock /> ', () => {
-    const wrapper = shallow(<NewsFeed newsData={[{}]} />);
-    expect(wrapper.contains(<NewsBlock key={Math.random} news={{}} />)).to.equal(true);
+    const wrapper = shallow(<NewsFeed
+      newsData={[{}]}
+      divRowClass="row"
+      divColClass="col-md-12"
+      imgRowClass="newsfeed-image"
+      contentClass="newsfeed-content"
+    />);
+    expect(wrapper.find(NewsBlock)).to.have.length(1);
   });
 
   it(' renders correct number of <NewsBlock /> ', () => {
