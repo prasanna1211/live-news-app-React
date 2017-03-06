@@ -44,8 +44,7 @@ describe('<SingleSourceNewsContainer />', () => {
   it(' calls componentDidMount function ', () => {
     const props = _.extend(baseProps, {});
     sinon.spy(SingleSourceNewsContainer.prototype, 'componentDidMount');
-    const wrapper = mount(<SingleSourceNewsContainer {...props} />);
-    console.log(' wrapper ', wrapper);
+    mount(<SingleSourceNewsContainer {...props} />);
     expect(SingleSourceNewsContainer.prototype.componentDidMount.calledOnce).to.equal(true);
   });
 });
