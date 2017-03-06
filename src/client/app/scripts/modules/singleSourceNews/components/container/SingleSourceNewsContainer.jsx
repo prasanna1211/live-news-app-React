@@ -6,7 +6,7 @@ import NewsFeed from '../presentational/NewsFeed.jsx';
 import { sourceFetchActionCreators, newsFetchActionCreators } from '../../actionCreators/actionCreators.js';
 import { getSourceList, getSourceListInitiatedStatus, getSourceListSuccessStatus, getNewsData, getNewsInitiatedStatus, getNewsSuccessStatus } from '../../selectors/selectors.js';
 
-class SingleSourceNewsContainer extends React.Component {
+export class SingleSourceNewsContainer extends React.Component {
 
   constructor(props) {
     super(props);
@@ -54,10 +54,10 @@ SingleSourceNewsContainer.propTypes = {
   sourceFetchAction: React.PropTypes.func.isRequired,
   sourceList: React.PropTypes.array.isRequired,
   newsFetchAction: React.PropTypes.func.isRequired,
-  newsData: React.PropTypes.object.isRequired,
+  newsData: React.PropTypes.array.isRequired,
 };
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     sourceList: getSourceList(state),
     sourceListApicallInitiated: getSourceListInitiatedStatus(state),
@@ -68,7 +68,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     sourceFetchAction: bindActionCreators(sourceFetchActionCreators, dispatch),
     newsFetchAction: bindActionCreators(newsFetchActionCreators, dispatch),

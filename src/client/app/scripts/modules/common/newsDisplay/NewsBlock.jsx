@@ -10,7 +10,7 @@ const NewsBlock = props => (
         <div className="col-md-7">
           <h5> Author: {props.news.author} </h5>
           <h4> Title: {props.news.title} </h4>
-          <i> News: {props.news.description} </i>
+          <h4> News: {props.news.description} </h4>
         </div>
       </div>
     </div>

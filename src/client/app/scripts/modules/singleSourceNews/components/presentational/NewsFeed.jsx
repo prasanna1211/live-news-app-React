@@ -5,6 +5,7 @@ import NewsBlock from 'scripts/modules/common/newsDisplay/NewsBlock.jsx';
 const renderNews = (props) => {
   return _.map(props.newsData, newsItem => (
     <NewsBlock
+      key={Math.random()}
       news={newsItem}
     />
   ));
@@ -17,7 +18,7 @@ const NewsFeed = props => (
 );
 
 NewsFeed.propTypes = {
-  newsData: React.PropTypes.object.isRequired,
+  newsData: React.PropTypes.array.isRequired,
 };
 
 export default NewsFeed;
