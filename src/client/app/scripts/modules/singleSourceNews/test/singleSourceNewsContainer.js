@@ -51,6 +51,8 @@ describe('<SingleSourceNewsContainer />', () => {
   it(' changing active source fetches new newslist data ', () => {
     const props = _.extend(baseProps, {
       newsFetchAction: sinon.spy(),
+      sourceListApicallInitiated: false,
+      sourceListApicallSuccess: true,
     });
     const wrapper = mount(<SingleSourceNewsContainer {...props} />);
     wrapper.find('select').simulate('change', { target: { value: 'source2' } });

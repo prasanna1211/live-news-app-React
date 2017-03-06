@@ -5,7 +5,7 @@ const SourceSelect = props => (
   <div className="source-select">
     <h4>{ props.sourceListApicallInitiated ? 'Loading sources...' : 'Select Source' }</h4>
     {
-      !props.sourceListApicallInitiated ? (<Selectbox
+      props.sourceListApicallSuccess ? (<Selectbox
         options={props.options}
         onChangeSelectbox={props.onChangeSource}
         className="source-select-selectbox"
@@ -18,6 +18,11 @@ SourceSelect.propTypes = {
   options: React.PropTypes.array.isRequired,
   onChangeSource: React.PropTypes.func.isRequired,
   sourceListApicallInitiated: React.PropTypes.bool.isRequired,
+  sourceListApicallSuccess: React.PropTypes.bool,
+};
+
+SourceSelect.defaultProps = {
+  sourceListApicallSuccess: false,
 };
 
 export default SourceSelect;
