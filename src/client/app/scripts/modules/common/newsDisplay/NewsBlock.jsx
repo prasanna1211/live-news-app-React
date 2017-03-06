@@ -1,17 +1,15 @@
 import React from 'react';
 
 const NewsBlock = props => (
-  <div className="row news-block-outer">
-    <div key={props.news.title} className="col-md-11 news-block">
-      <div className="row">
-        <div className="news-image col-md-4">
-          <img src={props.news.urlToImage} width="20%" height="30%" alt="news" />
-        </div>
-        <div className="col-md-7">
-          <h5> Author: {props.news.author} </h5>
-          <h4> Title: {props.news.title} </h4>
-          <h4> News: {props.news.description} </h4>
-        </div>
+  <div className={props.divRowClass}>
+    <div key={props.news.title} className={props.divColClass}>
+      <div className={props.imgRowClass}>
+        <img src={props.news.urlToImage} alt="news" />
+      </div>
+      <div className={props.contentClass}>
+        <h5> Author: {props.news.author} </h5>
+        <h4> Title: {props.news.title} </h4>
+        <h4> News: {props.news.description} </h4>
       </div>
     </div>
   </div>
@@ -19,5 +17,9 @@ const NewsBlock = props => (
 
 NewsBlock.propTypes = {
   news: React.PropTypes.object.isRequired,
+  divRowClass: React.PropTypes.string.isRequired,
+  divColClass: React.PropTypes.string.isRequired,
+  imgRowClass: React.PropTypes.string.isRequired,
+  contentClass: React.PropTypes.string.isRequired,
 };
 export default NewsBlock;

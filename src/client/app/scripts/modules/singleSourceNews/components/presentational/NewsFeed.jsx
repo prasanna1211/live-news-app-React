@@ -7,12 +7,16 @@ const renderNews = (props) => {
     <NewsBlock
       key={Math.random()}
       news={newsItem}
+      divRowClass="row"
+      divColClass="col-md-12"
+      imgRowClass="newsfeed-image"
+      contentClass="newsfeed-content"
     />
   ));
 };
 
 const NewsFeed = props => (
-  <div>
+  <div className="news-feed">
     { renderNews(props) }
   </div>
 );
