@@ -48,11 +48,4 @@ describe('<SingleSourceNewsContainer />', () => {
     console.log(' wrapper ', wrapper);
     expect(SingleSourceNewsContainer.prototype.componentDidMount.calledOnce).to.equal(true);
   });
-
-  it(' simulates sourceFetchAction ', () => {
-    const x = sinon.spy();
-    console.log(' count is ', x.callCount);
-    x();
-    console.log(' count is ', x.callCount);
-  });
 });
