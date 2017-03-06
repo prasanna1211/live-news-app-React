@@ -21,11 +21,32 @@ const RenderOptions = (props) => {
   });
 };
 
-const Selectbox = props => (
-  <select onChange={props.onChangeSelectbox}>
-    {RenderOptions(props)}
-  </select>
-);
+class Selectbox extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: '',
+    };
+
+    this.onChangeSelect = this.onChangeSelect.bind(this);
+  }
+
+  onChangeSelect(e) {
+    this.props.onChangeSelectbox(e.target.value);
+    this.setState({
+      value: e.target.value,
+    });
+  }
+
+  render() {
+    return (
+      <select onChange={this.onChangeSelect} value={this.state.value}>
+        {RenderOptions(this.props)}
+      </select>
+    );
+  }
+}
 
 Selectbox.propTypes = {
   onChangeSelectbox: React.PropTypes.func.isRequired,

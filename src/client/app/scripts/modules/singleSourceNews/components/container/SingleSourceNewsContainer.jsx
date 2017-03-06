@@ -28,9 +28,9 @@ export class SingleSourceNewsContainer extends React.Component {
     }
   }
 
-  onChangeSource(event) {
+  onChangeSource(activeSource) {
     this.setState({
-      activeSource: event.target.value,
+      activeSource,
     });
   }
 
@@ -54,7 +54,14 @@ SingleSourceNewsContainer.propTypes = {
   sourceFetchAction: React.PropTypes.func.isRequired,
   sourceList: React.PropTypes.array.isRequired,
   newsFetchAction: React.PropTypes.func.isRequired,
-  newsData: React.PropTypes.array.isRequired,
+  newsData: React.PropTypes.oneOfType([
+    React.PropTypes.array,
+    React.PropTypes.object,
+  ]),
+};
+
+SingleSourceNewsContainer.defaultProps = {
+  newsData: [],
 };
 
 export const mapStateToProps = (state) => {

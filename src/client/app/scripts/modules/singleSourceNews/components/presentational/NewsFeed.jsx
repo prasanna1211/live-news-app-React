@@ -18,7 +18,14 @@ const NewsFeed = props => (
 );
 
 NewsFeed.propTypes = {
-  newsData: React.PropTypes.array.isRequired,
+  newsData: React.PropTypes.oneOfType([
+    React.PropTypes.array,
+    React.PropTypes.object,
+  ]),
+};
+
+NewsFeed.defaultProps = {
+  newsData: [],
 };
 
 export default NewsFeed;
