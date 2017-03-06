@@ -1,3 +1,27 @@
 /**
  * Styles for layout
  */
+header {
+  background: #1a1c4b;
+  color: white;
+  border: 1px solid;
+  padding: 1em;
+  text-align: center;
+}
+.sidebar-main {
+  float: left;
+  width: 15%;
+  border: 1px solid;
+  ul {
+    list-style-type: none;
+    li:hover {
+      background: #1a1c4b;
+      opacity: 0.5;
+      color: white;
+      pointer-events: auto;
+    }
+  }
+}
+
+
+

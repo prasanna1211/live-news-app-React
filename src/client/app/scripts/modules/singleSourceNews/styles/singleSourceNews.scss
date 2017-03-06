@@ -1,19 +1,5 @@
-.news-block {
-  border: 2px solid green;
-  height: 200px;
+.content {
+  float: left;
+  width: 70%;
+  margin-left: 5em;
 }
-
-.news-block-outer.row {
-  margin: 0px;
-}
-
-.news-image {
-  height: 100%;
-  border: 1px solid;
-  img {
-    width: 60%;
-    height: 60%;
-    margin: 18% 10%;
-  }
-}
-

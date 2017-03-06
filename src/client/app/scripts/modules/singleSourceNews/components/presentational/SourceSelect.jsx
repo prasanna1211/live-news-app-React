@@ -2,7 +2,7 @@ import React from 'react';
 import Selectbox from '../../../common/inputs/Selectbox.jsx';
 
 const SourceSelect = props => (
-  <div>
+  <div className="source-select">
     Selecting source
     <Selectbox
       options={props.options}

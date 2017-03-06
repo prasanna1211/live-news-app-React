@@ -5,7 +5,7 @@ import React from 'react';
 
 const Navbar = () => (
   <header className="navbar-main">
-    Navbars
+    Current News App
   </header>
 );
 
