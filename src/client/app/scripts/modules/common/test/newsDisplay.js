@@ -5,19 +5,33 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import NewsBlock from '../newsDisplay/NewsBlock.jsx';
+import NewsContent from '../newsDisplay/NewsContent.jsx';
 
 describe('newsDisplay -> <NewsBlock />', () => {
-  const news = {
-    author: 'author',
-    title: 'title',
-    description: 'description',
-    urlToImage: 'url',
+  const props = {
+    news: {
+      author: 'author',
+      title: 'title',
+      description: 'description',
+      urlToImage: 'url',
+    },
+    divRowClass: '',
+    divColClass: '',
+    imgRowClass: '',
+    contentClass: '',
   };
 
-  it(' renders everything correctly ', () => {
-    const wrapper = shallow(<NewsBlock news={news} />);
-    expect(wrapper.find('h4')).to.have.length(2);
-    expect(wrapper.find('h5')).to.have.length(1);
-    expect(wrapper.find('img')).to.have.length(1);
+  it(' renders Component as desired ', () => {
+    const wrapper = shallow(<NewsBlock {...props} />);
+    expect(wrapper.find(NewsContent).exists()).to.equal(false);
+    wrapper.setState({
+      imageLoadedSuccess: true,
+    });
+    expect(wrapper.find(NewsContent).exists()).to.equal(true);
+    wrapper.setState({
+      imageLoadedError: true,
+      imageLoadedSuccess: false,
+    });
+    expect(wrapper.find(NewsContent).exists()).to.equal(false);
   });
 });
