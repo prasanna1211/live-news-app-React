@@ -1,19 +1,72 @@
 import React from 'react';
 
-const NewsBlock = props => (
-  <div className={props.divRowClass}>
-    <div key={props.news.title} className={props.divColClass}>
-      <div className={props.imgRowClass}>
-        <img src={props.news.urlToImage} alt="news" />
+class NewsBlock extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      imageLoadedSuccess: false,
+      imageLoadedError: false,
+    };
+    this.onLoad = this.onLoad.bind(this);
+    this.onError = this.onError.bind(this);
+  }
+
+  onLoad() {
+    this.setState({
+      imageLoadedSuccess: true,
+    });
+  }
+
+  onError() {
+    this.setState({
+      imageLoadedError: true,
+    });
+  }
+
+  render() {
+    let { imageLoadedSuccess, imageLoadedError } = this.state;
+    return (
+      <div className={imageLoadedSuccess ? "newsfeed-item" : null}>
+        <div className={this.props.divRowClass}>
+          <div key={this.props.news.title} className={this.props.divColClass}>
+            <div className={this.props.imgRowClass}>
+              <img
+                src={this.props.news.urlToImage}
+                alt="news"
+                onLoad={this.onLoad}
+                onError={this.onError}
+              />
+            </div>
+            {
+              imageLoadedSuccess ? (
+                <div className={this.props.contentClass}>
+                <div className="newsblock-source">
+                  Author: {this.props.news.author}
+                </div>
+                <div className="newsblock-title">
+                  Title: {this.props.news.title}
+                </div>
+                <div className="newsblock-content">
+                  News: {this.props.news.description}
+                </div>
+              </div>
+              ) : null
+            }
+
+          </div>
+        </div>
       </div>
-      <div className={props.contentClass}>
-        <h5> Author: {props.news.author} </h5>
-        <h4> Title: {props.news.title} </h4>
-        <h4> News: {props.news.description} </h4>
-      </div>
-    </div>
-  </div>
-);
+    );
+    if(imageLoadedError) {
+      return null;
+    }
+    return (
+      <div> Loading... </div>
+    );
+  }
+}
 
 NewsBlock.propTypes = {
   news: React.PropTypes.object.isRequired,

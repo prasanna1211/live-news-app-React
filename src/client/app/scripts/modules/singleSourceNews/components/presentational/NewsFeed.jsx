@@ -4,15 +4,14 @@ import NewsBlock from 'scripts/modules/common/newsDisplay/NewsBlock.jsx';
 
 const renderNews = (props) => {
   return _.map(props.newsData, newsItem => (
-    <div className="newsfeed-item" key={Math.random() * Math.random()}>
-      <NewsBlock
-        news={newsItem}
-        divRowClass="row"
-        divColClass="col-md-12"
-        imgRowClass="newsfeed-image"
-        contentClass="newsfeed-content"
-      />
-    </div>
+    <NewsBlock
+      key={Math.random() * Math.random()}
+      news={newsItem}
+      divRowClass="row"
+      divColClass="col-md-12"
+      imgRowClass="newsfeed-image"
+      contentClass="newsfeed-content"
+    />
   ));
 };
 
