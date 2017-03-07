@@ -34,13 +34,4 @@ describe('newsDisplay -> <NewsBlock />', () => {
     });
     expect(wrapper.find(NewsContent).exists()).to.equal(false);
   });
-  it(' changes dynamic class on successfull image loading', () => {
-    const wrapper = shallow(<NewsBlock {...props} />);
-    expect(wrapper.find('.newsfeed-parent').hasClass('newsfeed-item')).to.equal(false);
-    wrapper.setState({
-      imageLoadedSuccess: true,
-    });
-    expect(wrapper.find('.newsfeed-parent').hasClass('newsfeed-item')).to.equal(true);
-    expect(true);
-  });
 });

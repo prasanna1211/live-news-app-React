@@ -9,7 +9,6 @@ const NewsContent = props => (
 
 NewsContent.propTypes = {
   news: React.PropTypes.object.isRequired,
-  contentClass: React.PropTypes.string.isRequired,
 };
 
 export default NewsContent;

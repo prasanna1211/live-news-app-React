@@ -49,8 +49,5 @@ class NewsBlock extends React.Component {
 
 NewsBlock.propTypes = {
   news: React.PropTypes.object.isRequired,
-  divRowClass: React.PropTypes.string.isRequired,
-  divColClass: React.PropTypes.string.isRequired,
-  imgRowClass: React.PropTypes.string.isRequired,
 };
 export default NewsBlock;
