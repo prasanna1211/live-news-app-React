@@ -2,8 +2,8 @@ import React from 'react';
 import _ from 'underscore';
 import NewsBlock from 'scripts/modules/common/newsDisplay/NewsBlock.jsx';
 
-const renderNews = (props) => {
-  return _.map(props.newsData, newsItem => (
+const renderNews = (data) => {
+  return _.map(data, newsItem => (
     <NewsBlock
       key={Math.random() * Math.random()}
       news={newsItem}
@@ -17,7 +17,7 @@ const renderNews = (props) => {
 
 const NewsFeed = props => (
   <div className="news-feed">
-    { props.newsApicallSuccess ? renderNews(props): null }
+    { props.newsApicallSuccess ? renderNews(props.newsData) : null }
   </div>
 );
 
@@ -26,6 +26,8 @@ NewsFeed.propTypes = {
     React.PropTypes.array,
     React.PropTypes.object,
   ]),
+  newsApicallSuccess: React.PropTypes.bool.isRequired,
+
 };
 
 NewsFeed.defaultProps = {

@@ -1,4 +1,5 @@
 import React from 'react';
+import NewsContent from './NewsContent.jsx';
 
 class NewsBlock extends React.Component {
 
@@ -26,9 +27,12 @@ class NewsBlock extends React.Component {
   }
 
   render() {
-    let { imageLoadedSuccess, imageLoadedError } = this.state;
+    const { imageLoadedSuccess, imageLoadedError } = this.state;
+    if (imageLoadedError) {
+      return null;
+    }
     return (
-      <div className={imageLoadedSuccess ? "newsfeed-item" : null}>
+      <div className={imageLoadedSuccess ? 'newsfeed-item' : null}>
         <div className={this.props.divRowClass}>
           <div key={this.props.news.title} className={this.props.divColClass}>
             <div className={this.props.imgRowClass}>
@@ -39,31 +43,10 @@ class NewsBlock extends React.Component {
                 onError={this.onError}
               />
             </div>
-            {
-              imageLoadedSuccess ? (
-                <div className={this.props.contentClass}>
-                <div className="newsblock-source">
-                  Author: {this.props.news.author}
-                </div>
-                <div className="newsblock-title">
-                  Title: {this.props.news.title}
-                </div>
-                <div className="newsblock-content">
-                  News: {this.props.news.description}
-                </div>
-              </div>
-              ) : null
-            }
-
+            {imageLoadedSuccess ? <NewsContent {...this.props} /> : null }
           </div>
         </div>
       </div>
-    );
-    if(imageLoadedError) {
-      return null;
-    }
-    return (
-      <div> Loading... </div>
     );
   }
 }
@@ -73,6 +56,5 @@ NewsBlock.propTypes = {
   divRowClass: React.PropTypes.string.isRequired,
   divColClass: React.PropTypes.string.isRequired,
   imgRowClass: React.PropTypes.string.isRequired,
-  contentClass: React.PropTypes.string.isRequired,
 };
 export default NewsBlock;
