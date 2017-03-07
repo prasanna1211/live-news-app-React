@@ -1,16 +1,9 @@
 import React from 'react';
 
 const NewsContent = props => (
-  <div className={props.contentClass}>
-    <div className="newsblock-source">
-      {props.activeSource}
-    </div>
-    <div className="newsblock-title">
-      {props.news.title}
-    </div>
-    <div className="newsblock-content">
-      News: {props.news.description}
-    </div>
+  <div className="w3-container w3-white">
+    <p><b>{props.news.title}</b></p>
+    <p>{props.news.description}</p>
   </div>
 );
 

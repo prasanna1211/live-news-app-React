@@ -1,4 +1,5 @@
 @import '../../../../styles/bootstrapcss/bootstrap.css';
+@import 'w3.css';
 
 .content {
   float: left;
@@ -71,4 +72,11 @@ img {
   border-left: 1px solid grey;
 }
 
+.news-block {
+  float: left;
+  width: 30%;
+}
 
+.w3-container {
+  padding: 0.01em 0.1em;
+}

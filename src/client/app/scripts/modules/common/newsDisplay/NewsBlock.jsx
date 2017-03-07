@@ -32,19 +32,15 @@ class NewsBlock extends React.Component {
       return null;
     }
     return (
-      <div className={imageLoadedSuccess ? 'newsfeed-parent newsfeed-item' : 'newsfeed-parent'}>
-        <div className={this.props.divRowClass}>
-          <div key={this.props.news.title} className={this.props.divColClass}>
-            <div className={this.props.imgRowClass}>
-              <img
-                src={this.props.news.urlToImage}
-                alt="news"
-                onLoad={this.onLoad}
-                onError={this.onError}
-              />
-            </div>
-            {imageLoadedSuccess ? <NewsContent {...this.props} /> : null }
-          </div>
+      <div className="news-block">
+        <div className="w3-container w3-margin-bottom">
+          <img
+            src={this.props.news.urlToImage}
+            alt="news"
+            onLoad={this.onLoad}
+            onError={this.onError}
+          />
+          { imageLoadedSuccess ? <NewsContent {...this.props} /> : null }
         </div>
       </div>
     );
