@@ -33,9 +33,15 @@
 img {
   max-width: 100%;
   max-height: 100%;
+  padding: 0.2em;
 }
 
 .newsfeed-content {
   width: 40%;
   float: left;
+}
+
+.newsfeed-item {
+  margin-top: 0.5em;
+  border: 1px solid grey;
 }
