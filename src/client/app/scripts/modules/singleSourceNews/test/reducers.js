@@ -37,7 +37,7 @@ describe(' #reducer:newsReducer ', () => {
       data: {
         test: 'test',
       },
-      newsFetchInitiated: true,
+      newsFetchInitiated: false,
       newsFetchSuccess: true,
     };
     expect(actualNewState.toJS()).to.deep.equal(expectedNewState);

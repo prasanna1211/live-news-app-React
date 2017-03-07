@@ -32,7 +32,7 @@ class NewsBlock extends React.Component {
       return null;
     }
     return (
-      <div className={imageLoadedSuccess ? 'newsfeed-item' : null}>
+      <div className={imageLoadedSuccess ? 'newsfeed-parent newsfeed-item' : 'newsfeed-parent'}>
         <div className={this.props.divRowClass}>
           <div key={this.props.news.title} className={this.props.divColClass}>
             <div className={this.props.imgRowClass}>
