@@ -15,7 +15,7 @@ function* newsFetchAction(action) {
     });
   } catch (error) {
     yield put({
-      type: 'NEWS_FETCH_REQUEST_SUCCESS',
+      type: 'NEWS_FETCH_REQUEST_FAILURE',
       payload: {
         success: false,
       },

@@ -16,7 +16,7 @@ export const newsReducer = (state = initialState, { type, payload }) => {
     }
     case 'NEWS_FETCH_REQUEST_SUCCESS': {
       let newState = state;
-      newState = newState.set('newsFetchInitiated', true);
+      newState = newState.set('newsFetchInitiated', false);
       newState = newState.set('newsFetchSuccess', true);
       newState = newState.set('data', payload);
       return newState;

@@ -45,6 +45,8 @@ export class SingleSourceNewsContainer extends React.Component {
         />
         <NewsFeed
           newsData={this.props.newsData}
+          newsApicallInitiated={this.props.newsApicallInitiated}
+          newsApicallSuccess={this.props.newsApicallSuccess}
         />
       </div>
     );
@@ -61,12 +63,16 @@ SingleSourceNewsContainer.propTypes = {
   ]),
   sourceListApicallInitiated: React.PropTypes.bool,
   sourceListApicallSuccess: React.PropTypes.bool,
+  newsApicallInitiated: React.PropTypes.bool,
+  newsApicallSuccess: React.PropTypes.bool,
 };
 
 SingleSourceNewsContainer.defaultProps = {
   newsData: [],
   sourceListApicallInitiated: false,
   sourceListApicallSuccess: false,
+  newsApicallInitiated: false,
+  newsApicallSuccess: false,
 };
 
 export const mapStateToProps = (state) => {
@@ -75,7 +81,7 @@ export const mapStateToProps = (state) => {
     sourceListApicallInitiated: getSourceListInitiatedStatus(state),
     sourceListApicallSuccess: getSourceListSuccessStatus(state),
     newsApicallInitiated: getNewsInitiatedStatus(state),
-    newsApiCallSuccess: getNewsSuccessStatus(state),
+    newsApicallSuccess: getNewsSuccessStatus(state),
     newsData: getNewsData(state),
   };
 };
