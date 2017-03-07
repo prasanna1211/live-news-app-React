@@ -40,15 +40,35 @@ img {
 .newsfeed-content {
   width: 70%;
   float: left;
+  border: 1px solid grey;
   h4 {
     font-size: 18px !important;
   }
   h5 {
     font-size: 14px !important;
   }
+  margin: 0px !important;
 }
 
 .newsfeed-item {
   margin-top: 0.5em;
   border: 1px solid grey;
 }
+
+.newsblock-source {
+  border-bottom: 1px solid grey;
+  width: 100%;
+  text-align: center;
+}
+
+.newsblock-title {
+  border-bottom: 1px solid grey;
+  width: 100%;
+  text-align: center;
+}
+
+.newsblock-content {
+  border-left: 1px solid grey;
+}
+
+

@@ -3,10 +3,10 @@ import React from 'react';
 const NewsContent = props => (
   <div className={props.contentClass}>
     <div className="newsblock-source">
-      Author: {props.news.author}
+      {props.activeSource}
     </div>
     <div className="newsblock-title">
-      Title: {props.news.title}
+      {props.news.title}
     </div>
     <div className="newsblock-content">
       News: {props.news.description}

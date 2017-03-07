@@ -2,11 +2,12 @@ import React from 'react';
 import _ from 'underscore';
 import NewsBlock from 'scripts/modules/common/newsDisplay/NewsBlock.jsx';
 
-const renderNews = (data) => {
+const renderNews = (activeSource, data) => {
   return _.map(data, newsItem => (
     <NewsBlock
       key={Math.random() * Math.random()}
       news={newsItem}
+      activeSource={activeSource}
       divRowClass="row"
       divColClass="col-md-12"
       imgRowClass="newsfeed-image"
@@ -17,7 +18,7 @@ const renderNews = (data) => {
 
 const NewsFeed = props => (
   <div className="news-feed">
-    { props.newsApicallSuccess ? renderNews(props.newsData) : null }
+    { props.newsApicallSuccess ? renderNews(props.activeSource, props.newsData) : null }
   </div>
 );
 
@@ -27,11 +28,12 @@ NewsFeed.propTypes = {
     React.PropTypes.object,
   ]),
   newsApicallSuccess: React.PropTypes.bool.isRequired,
-
+  activeSource: React.PropTypes.string,
 };
 
 NewsFeed.defaultProps = {
   newsData: [],
+  activeSource: 'N/A',
 };
 
 export default NewsFeed;

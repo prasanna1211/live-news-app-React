@@ -44,6 +44,7 @@ export class SingleSourceNewsContainer extends React.Component {
           sourceListApicallSuccess={this.props.sourceListApicallSuccess}
         />
         <NewsFeed
+          activeSource={this.state.activeSource}
           newsData={this.props.newsData}
           newsApicallInitiated={this.props.newsApicallInitiated}
           newsApicallSuccess={this.props.newsApicallSuccess}
