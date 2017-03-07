@@ -29,7 +29,7 @@ class NewsBlock extends React.Component {
   render() {
     const { imageLoadedSuccess, imageLoadedError } = this.state;
     if (imageLoadedError) {
-      return null;
+      return <p> couldn't load </p>;
     }
     return (
       <div className="news-block">
