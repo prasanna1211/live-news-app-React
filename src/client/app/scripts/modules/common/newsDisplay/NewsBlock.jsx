@@ -29,7 +29,7 @@ class NewsBlock extends React.Component {
   render() {
     const { imageLoadedSuccess, imageLoadedError } = this.state;
     if (imageLoadedError) {
-      return <p> couldn't load </p>;
+      return (<div> error </div>);
     }
     return (
       <div className="news-block">
@@ -39,6 +39,7 @@ class NewsBlock extends React.Component {
             alt="news"
             onLoad={this.onLoad}
             onError={this.onError}
+            className="w3-hover-opacity"
           />
           { imageLoadedSuccess ? <NewsContent {...this.props} /> : null }
         </div>
