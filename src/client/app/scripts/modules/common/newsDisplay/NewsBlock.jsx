@@ -1,21 +1,51 @@
 import React from 'react';
+import NewsContent from './NewsContent.jsx';
 
-const NewsBlock = props => (
-  <div className="row news-block-outer">
-    <div key={props.news.title} className="col-md-11 news-block">
-      <div className="row">
-        <div className="news-image col-md-4">
-          <img src={props.news.urlToImage} width="20%" height="30%" alt="news" />
-        </div>
-        <div className="col-md-7">
-          <h5> Author: {props.news.author} </h5>
-          <h4> Title: {props.news.title} </h4>
-          <h4> News: {props.news.description} </h4>
+class NewsBlock extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      imageLoadedSuccess: false,
+      imageLoadedError: false,
+    };
+    this.onLoad = this.onLoad.bind(this);
+    this.onError = this.onError.bind(this);
+  }
+
+  onLoad() {
+    this.setState({
+      imageLoadedSuccess: true,
+    });
+  }
+
+  onError() {
+    this.setState({
+      imageLoadedError: true,
+    });
+  }
+
+  render() {
+    const { imageLoadedSuccess, imageLoadedError } = this.state;
+    if (imageLoadedError) {
+      return <p> couldn't load </p>;
+    }
+    return (
+      <div className="news-block">
+        <div className="w3-container w3-margin-bottom">
+          <img
+            src={this.props.news.urlToImage}
+            alt="news"
+            onLoad={this.onLoad}
+            onError={this.onError}
+          />
+          { imageLoadedSuccess ? <NewsContent {...this.props} /> : null }
         </div>
       </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
 
 NewsBlock.propTypes = {
   news: React.PropTypes.object.isRequired,

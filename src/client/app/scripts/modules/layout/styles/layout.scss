@@ -1,54 +1,31 @@
 /**
  * Styles for layout
  */
-.app-wrapper {
-  position: relative;
-  height: 100%;
+header {
+  background: #1a1c4b;
+  color: white;
+  border: 1px solid;
+  padding: 1em;
+  text-align: center;
 }
-
-.sidebar-wrapper {
-  top: 3.1em;
-  position: fixed;
-  width: 30%;
-  height: 40%;
-}
-
-.content-wrapper {
-  top: 3.1em;
-  position: absolute;
-  border: 1px solid orange;
-  left: 35%;
-  width: 65%;
-}
-
-.navbar-main {
-  line-height: 3em;
-  background: #00b8ff;
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-}
-
 .sidebar-main {
-  margin: 10% 20% 10% 20%;
-}
-
-ul.sidebar-ul {
-  padding: 0;
-  margin: 0;
-  li.sidebar-li {
-    display: block;
-    border: 1px solid #5c5c5c;
-    border-radius: 3px;
-    background: #ffffff;
-    padding: 5px;
-    &:hover, &.active {
-      background: #00b8ff;
-      cursor: pointer;
+  float: left;
+  width: 15%;
+  margin-top: 2em;
+  ul {
+    list-style-type: none;
+    li {
+      &:hover {
+        background: #1a1c4b;
+        opacity: 0.5;
+        color: white;
+        cursor: pointer;
+      }
     }
   }
 }
 
-.content {
-  margin: 10%;
+.sidebar-li {
+  padding: 1em;
 }
+

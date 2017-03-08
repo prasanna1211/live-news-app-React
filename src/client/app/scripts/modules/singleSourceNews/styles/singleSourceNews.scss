@@ -1,19 +1,82 @@
-.news-block {
-  border: 2px solid green;
-  height: 200px;
+@import '../../../../styles/bootstrapcss/bootstrap.css';
+@import 'w3.css';
+
+.content {
+  float: left;
+  width: 70%;
+  margin-left: 5em;
 }
 
-.news-block-outer.row {
-  margin: 0px;
-}
-
-.news-image {
-  height: 100%;
-  border: 1px solid;
-  img {
-    width: 60%;
-    height: 60%;
-    margin: 18% 10%;
+.source-select {
+  margin-top: 2em;
+  h4 {
+    color: #1a1c4b;
+    font-weight: bold;
   }
 }
 
+.source-select-selectbox {
+  background: transparent;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.news-feed {
+  margin-top: 1em;
+  overflow: hidden;
+}
+
+.newsfeed-image {
+  width: 30%;
+  float: left;
+  margin: 1em auto;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0.2em;
+}
+
+.newsfeed-content {
+  width: 70%;
+  float: left;
+  border: 1px solid grey;
+  h4 {
+    font-size: 18px !important;
+  }
+  h5 {
+    font-size: 14px !important;
+  }
+  margin: 0px !important;
+}
+
+.newsfeed-item {
+  margin-top: 0.5em;
+  border: 1px solid grey;
+}
+
+.newsblock-source {
+  border-bottom: 1px solid grey;
+  width: 100%;
+  text-align: center;
+}
+
+.newsblock-title {
+  border-bottom: 1px solid grey;
+  width: 100%;
+  text-align: center;
+}
+
+.newsblock-content {
+  border-left: 1px solid grey;
+}
+
+.news-block {
+  float: left;
+  width: 30%;
+}
+
+.w3-container {
+  padding: 0.01em 0.1em;
+}

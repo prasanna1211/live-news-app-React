@@ -4,9 +4,9 @@
 import React from 'react';
 
 const Navbar = () => (
-  <nav className="navbar-main">
-    Navbars
-  </nav>
+  <header className="navbar-main">
+    Current News App
+  </header>
 );
 
 export default Navbar;

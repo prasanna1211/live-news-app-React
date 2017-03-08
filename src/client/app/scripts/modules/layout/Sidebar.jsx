@@ -15,13 +15,13 @@ const Sidebar = props => (
           onClick={() => { props.selectActiveNewsType('singleSource'); }}
           className={`sidebar-li ${(props.activeNewsType === 'singleSource') ? 'active' : ''}`}
         >
-          Single Source News
+          Read A Source
         </li>
         <li
           onClick={() => { props.selectActiveNewsType('newsFeed'); }}
           className={`sidebar-li ${(props.activeNewsType === 'newsFeed') ? 'active' : ''}`}
         >
-          News Feed
+          Latest News
         </li>
         <li
           onClick={() => { props.selectActiveNewsType('others'); }}

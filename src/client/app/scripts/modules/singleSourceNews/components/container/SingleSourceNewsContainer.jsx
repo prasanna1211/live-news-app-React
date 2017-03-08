@@ -28,22 +28,26 @@ export class SingleSourceNewsContainer extends React.Component {
     }
   }
 
-  onChangeSource(event) {
+  onChangeSource(activeSource) {
     this.setState({
-      activeSource: event.target.value,
+      activeSource,
     });
   }
 
   render() {
     return (
-      <div>
-        Container
+      <div className="content">
         <SourceSelect
           onChangeSource={this.onChangeSource}
           options={this.props.sourceList}
+          sourceListApicallInitiated={this.props.sourceListApicallInitiated}
+          sourceListApicallSuccess={this.props.sourceListApicallSuccess}
         />
         <NewsFeed
+          activeSource={this.state.activeSource}
           newsData={this.props.newsData}
+          newsApicallInitiated={this.props.newsApicallInitiated}
+          newsApicallSuccess={this.props.newsApicallSuccess}
         />
       </div>
     );
@@ -54,7 +58,22 @@ SingleSourceNewsContainer.propTypes = {
   sourceFetchAction: React.PropTypes.func.isRequired,
   sourceList: React.PropTypes.array.isRequired,
   newsFetchAction: React.PropTypes.func.isRequired,
-  newsData: React.PropTypes.array.isRequired,
+  newsData: React.PropTypes.oneOfType([
+    React.PropTypes.array,
+    React.PropTypes.object,
+  ]),
+  sourceListApicallInitiated: React.PropTypes.bool,
+  sourceListApicallSuccess: React.PropTypes.bool,
+  newsApicallInitiated: React.PropTypes.bool,
+  newsApicallSuccess: React.PropTypes.bool,
+};
+
+SingleSourceNewsContainer.defaultProps = {
+  newsData: [],
+  sourceListApicallInitiated: false,
+  sourceListApicallSuccess: false,
+  newsApicallInitiated: false,
+  newsApicallSuccess: false,
 };
 
 export const mapStateToProps = (state) => {
@@ -63,7 +82,7 @@ export const mapStateToProps = (state) => {
     sourceListApicallInitiated: getSourceListInitiatedStatus(state),
     sourceListApicallSuccess: getSourceListSuccessStatus(state),
     newsApicallInitiated: getNewsInitiatedStatus(state),
-    newsApiCallSuccess: getNewsSuccessStatus(state),
+    newsApicallSuccess: getNewsSuccessStatus(state),
     newsData: getNewsData(state),
   };
 };

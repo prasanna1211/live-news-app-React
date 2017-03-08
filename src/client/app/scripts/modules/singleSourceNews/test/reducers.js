@@ -17,7 +17,7 @@ describe(' #reducer:sourceListReducer ', () => {
       data: {
         test: 'test',
       },
-      sourceListFetchInitiated: true,
+      sourceListFetchInitiated: false,
       sourceListFetchSuccess: true,
     };
     expect(actualNewState.toJS()).to.deep.equal(expectedNewState);
@@ -37,7 +37,7 @@ describe(' #reducer:newsReducer ', () => {
       data: {
         test: 'test',
       },
-      newsFetchInitiated: true,
+      newsFetchInitiated: false,
       newsFetchSuccess: true,
     };
     expect(actualNewState.toJS()).to.deep.equal(expectedNewState);

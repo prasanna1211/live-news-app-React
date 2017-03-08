@@ -47,4 +47,17 @@ describe('<SingleSourceNewsContainer />', () => {
     mount(<SingleSourceNewsContainer {...props} />);
     expect(SingleSourceNewsContainer.prototype.componentDidMount.calledOnce).to.equal(true);
   });
+
+  it(' changing active source fetches new newslist data ', () => {
+    const props = _.extend(baseProps, {
+      newsFetchAction: sinon.spy(),
+      sourceListApicallInitiated: false,
+      sourceListApicallSuccess: true,
+    });
+    const wrapper = mount(<SingleSourceNewsContainer {...props} />);
+    wrapper.find('select').simulate('change', { target: { value: 'source2' } });
+    expect(wrapper.find('select').props().value).to.equal('source2');
+    wrapper.find('select').simulate('change', { target: { value: 'source1' } });
+    expect(wrapper.find('select').props().value).to.equal('source1');
+  });
 });
