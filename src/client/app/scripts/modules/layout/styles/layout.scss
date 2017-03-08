@@ -1,31 +1,44 @@
 /**
  * Styles for layout
  */
+
+.wrapper {
+  width: 100%;
+}
+
 header {
-  background: #1a1c4b;
+  background: #3498db;
   color: white;
   border: 1px solid;
   padding: 1em;
   text-align: center;
 }
-.sidebar-main {
+
+.sidebar-wrapper {
   float: left;
   width: 15%;
   margin-top: 2em;
-  ul {
+}
+
+.sidebar-ul {
     list-style-type: none;
+    padding-left: 10%;
     li {
       &:hover {
-        background: #1a1c4b;
-        opacity: 0.5;
+        background: #3498db;
+        transform: scale(1.05);
         color: white;
         cursor: pointer;
+        transition: transform 0.5s;
       }
     }
   }
-}
 
 .sidebar-li {
-  padding: 1em;
+  padding: 0.5em;
 }
 
+.app-header {
+  font-weight: bold;
+  font-size: 22;
+}
