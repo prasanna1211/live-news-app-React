@@ -21,12 +21,21 @@ export class SingleSourceNewsContainer extends React.Component {
 
     this.state = {
       activeSource: '',
+      activeCategory: false,
     };
     this.onChangeSource = this.onChangeSource.bind(this);
   }
 
   componentDidMount() {
     this.props.sourceFetchAction();
+  }
+
+  componentWillReceiveProps(nextProps, nextState) {
+    if(this.props.activeSelectedCategory != nextProps.activeSelectedCategory) {
+      this.setState({
+        activeCategory: true,
+      });
+    }
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -39,6 +48,7 @@ export class SingleSourceNewsContainer extends React.Component {
   onChangeSource(activeSource) {
     this.setState({
       activeSource,
+      activeCategory: false,
     });
   }
 
@@ -53,6 +63,7 @@ export class SingleSourceNewsContainer extends React.Component {
         />
         <NewsFeed
           activeSource={this.state.activeSource}
+          activeCategoryChanged={this.state.activeCategory}
           newsData={this.props.newsData}
           newsApicallInitiated={this.props.newsApicallInitiated}
           newsApicallSuccess={this.props.newsApicallSuccess}

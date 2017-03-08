@@ -18,7 +18,7 @@ const renderNews = (activeSource, data) => {
 
 const NewsFeed = props => (
   <div className="news-feed">
-    { props.newsApicallSuccess ? renderNews(props.activeSource, props.newsData) : null }
+    { (props.newsApicallSuccess && !props.activeCategoryChanged) ? renderNews(props.activeSource, props.newsData) : null }
   </div>
 );
 
