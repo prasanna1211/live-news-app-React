@@ -35,6 +35,7 @@ header {
 
 .sidebar-li {
   padding: 0.5em;
+  text-transform: capitalize;
   &.active {
     background-color: #3498db;
     color: black;
