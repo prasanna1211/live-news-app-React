@@ -8,30 +8,26 @@ import { selectActiveNewsType } from './actionCreators/index.js';
 import { getActiveNewsType } from './selectors/selector.js';
 
 const Sidebar = props => (
-  <div className="sidebar-main">
-    <div className="sidebar">
-      <ul className="sidebar-ul">
-        <li
-          onClick={() => { props.selectActiveNewsType('singleSource'); }}
-          className={`sidebar-li ${(props.activeNewsType === 'singleSource') ? 'active' : ''}`}
-        >
-          Read A Source
-        </li>
-        <li
-          onClick={() => { props.selectActiveNewsType('newsFeed'); }}
-          className={`sidebar-li ${(props.activeNewsType === 'newsFeed') ? 'active' : ''}`}
-        >
-          Latest News
-        </li>
-        <li
-          onClick={() => { props.selectActiveNewsType('others'); }}
-          className={`sidebar-li ${(props.activeNewsType === 'others') ? 'active' : ''}`}
-        >
-          Others
-        </li>
-      </ul>
-    </div>
-  </div>
+    <ul className="sidebar-ul">
+      <li
+        onClick={() => { props.selectActiveNewsType('singleSource'); }}
+        className={`sidebar-li ${(props.activeNewsType === 'singleSource') ? 'active' : ''}`}
+      >
+        Read A Source
+      </li>
+      <li
+        onClick={() => { props.selectActiveNewsType('newsFeed'); }}
+        className={`sidebar-li ${(props.activeNewsType === 'newsFeed') ? 'active' : ''}`}
+      >
+        Latest News
+      </li>
+      <li
+        onClick={() => { props.selectActiveNewsType('others'); }}
+        className={`sidebar-li ${(props.activeNewsType === 'others') ? 'active' : ''}`}
+      >
+        Others
+      </li>
+    </ul>
 );
 
 Sidebar.propTypes = {

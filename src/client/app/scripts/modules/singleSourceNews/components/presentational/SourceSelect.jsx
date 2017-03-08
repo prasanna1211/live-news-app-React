@@ -3,7 +3,7 @@ import Selectbox from '../../../common/inputs/Selectbox.jsx';
 
 const SourceSelect = props => (
   <div className="source-select">
-    <h4>{ props.sourceListApicallInitiated ? 'Loading sources...' : 'Select Source' }</h4>
+    <h4 className="content-header">{ props.sourceListApicallInitiated ? 'Loading sources...' : 'Select Source' }</h4>
     {
       props.sourceListApicallSuccess ? (<Selectbox
         options={props.options}
