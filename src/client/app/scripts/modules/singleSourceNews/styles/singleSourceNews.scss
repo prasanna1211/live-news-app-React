@@ -73,10 +73,19 @@ img {
 }
 
 .news-block {
+  height: 350px;
   float: left;
   width: 30%;
+  img {
+    height: 40%;
+    padding: 0px 0.4em;
+  }
 }
 
 .w3-container {
-  padding: 0.01em 0.1em;
+  padding: 0.01em 0.3em;
+}
+
+.news-content {
+  margin-top: 1em;
 }
