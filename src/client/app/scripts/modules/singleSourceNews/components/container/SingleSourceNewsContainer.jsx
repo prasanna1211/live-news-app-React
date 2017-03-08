@@ -4,7 +4,15 @@ import { bindActionCreators } from 'redux';
 import SourceSelect from '../presentational/SourceSelect.jsx';
 import NewsFeed from '../presentational/NewsFeed.jsx';
 import { sourceFetchActionCreators, newsFetchActionCreators } from '../../actionCreators/actionCreators.js';
-import { getSourceList, getSourceListInitiatedStatus, getSourceListSuccessStatus, getNewsData, getNewsInitiatedStatus, getNewsSuccessStatus } from '../../selectors/selectors.js';
+import {
+  getSourceList,
+  getSourceListInitiatedStatus,
+  getSourceListSuccessStatus,
+  getNewsData,
+  getNewsInitiatedStatus,
+  getNewsSuccessStatus,
+  getActiveCategory,
+} from '../../selectors/selectors.js';
 
 export class SingleSourceNewsContainer extends React.Component {
 
@@ -84,6 +92,7 @@ export const mapStateToProps = (state) => {
     newsApicallInitiated: getNewsInitiatedStatus(state),
     newsApicallSuccess: getNewsSuccessStatus(state),
     newsData: getNewsData(state),
+    activeSelectedCategory: getActiveCategory(state),
   };
 };
 

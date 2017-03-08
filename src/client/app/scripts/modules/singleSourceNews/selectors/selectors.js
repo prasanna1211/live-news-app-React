@@ -16,18 +16,30 @@ export const getSourceListSuccessStatus = createSelector([getSourceListReducer],
 // Get data branch of the tree
 export const getSourceListData = createSelector([getSourceListReducer], reducer => (reducer.get('data')));
 
+/**
+ * Selectors for Active selected categories
+ */
+
+export const getActiveCategoriesReducer = state => (state.get('layoutModuleReducer').get('selectActiveNewsReducer'));
+
+export const getActiveCategory = createSelector([getActiveCategoriesReducer], (reducer) => {
+  return (reducer ? reducer.get('activeNewsType') : '');
+});
+
 // Get source list and do computation
 export const getSourceList = createSelector(
-  [getSourceListData], (data) => {
+  [getSourceListData, getActiveCategory], (data, activeNews) => {
     const sourceList = !_.isEmpty(data) ? data.sourceList : {};
-    return _.map(sourceList, (source) => {
-      return {
-        name: source.name,
-        value: source.id,
-      };
-    });
-  },
-);
+    return _.chain(sourceList)
+      .filter(source => (activeNews === source.category))
+      .map((validSource) => {
+        return {
+          name: validSource.name,
+          value: validSource.id,
+        };
+      })
+      .value();
+  });
 
 /*
  * Selectors for news branch of state tree
