@@ -40,6 +40,9 @@ class Selectbox extends React.Component {
   }
 
   render() {
+    if(_.isEmpty(this.props.options)) {
+      return <h6> Select A Category </h6>
+    }
     return (
       <select
         onChange={this.onChangeSelect}
