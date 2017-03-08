@@ -9,7 +9,7 @@ require('scripts/modules/layout/styles/layout.scss');
 
 const Layout = (props) => {
   return (
-    <div className="app-wrapper">
+    <div className="wrapper">
       <div>
         <Navbar />
       </div>
