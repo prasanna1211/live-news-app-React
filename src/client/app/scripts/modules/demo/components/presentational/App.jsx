@@ -1,11 +1,8 @@
-/*
- * Dummy component
- */
 import React from 'react';
 
-const App = () => (
-  <div className="content">
-    Successfully loaded React Project
+const App= () => (
+  <div>
+    App
   </div>
 );
 
