@@ -41,7 +41,11 @@ class Selectbox extends React.Component {
 
   render() {
     if (_.isEmpty(this.props.options)) {
-      return <h6> No valid source found </h6>
+      return (
+        <h6>
+          No valid source found
+        </h6>
+      );
     }
     return (
       <select
@@ -58,12 +62,12 @@ class Selectbox extends React.Component {
 Selectbox.propTypes = {
   onChangeSelectbox: React.PropTypes.func.isRequired,
   className: React.PropTypes.string,
-  options: React.PropTypes.array
+  options: React.PropTypes.array,
 };
 
 Selectbox.defaultProps = {
   className: '',
-  defaultProps: [],
+  options: [],
 };
 
 export default Selectbox;

@@ -30,17 +30,16 @@ export class SingleSourceNewsContainer extends React.Component {
     this.props.sourceFetchAction();
   }
 
-  componentWillReceiveProps(nextProps, nextState) {
-    if(this.props.activeSelectedCategory != nextProps.activeSelectedCategory) {
+  componentWillReceiveProps(nextProps) {
+    if (this.props.activeSelectedCategory !== nextProps.activeSelectedCategory) {
       this.setState({
         activeCategory: true,
       });
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate(nextProps, nextState) { // eslint-disable-line
     if (this.state.activeSource !== nextState.activeSource) {
-      // Fetch the news of this source
       this.props.newsFetchAction(nextState.activeSource, 'top');
     }
   }
@@ -85,6 +84,7 @@ SingleSourceNewsContainer.propTypes = {
   sourceListApicallSuccess: React.PropTypes.bool,
   newsApicallInitiated: React.PropTypes.bool,
   newsApicallSuccess: React.PropTypes.bool,
+  activeSelectedCategory: React.PropTypes.string.isRequired,
 };
 
 SingleSourceNewsContainer.defaultProps = {

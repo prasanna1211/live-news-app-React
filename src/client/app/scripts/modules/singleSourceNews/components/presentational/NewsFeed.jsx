@@ -29,6 +29,7 @@ NewsFeed.propTypes = {
   ]),
   newsApicallSuccess: React.PropTypes.bool.isRequired,
   activeSource: React.PropTypes.string,
+  activeCategoryChanged: React.PropTypes.bool.isRequired,
 };
 
 NewsFeed.defaultProps = {
