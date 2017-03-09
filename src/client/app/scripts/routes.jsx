@@ -12,7 +12,6 @@ import SingleSourceNewsRoutes from 'scripts/modules/singleSourceNews/routes.jsx'
 
 // demo module route
 import App from 'scripts/modules/demo/components/presentational/App.jsx';
-import DemoRoutes from 'scripts/modules/demo/routes.jsx';
 
 const Routes = () => (
   <Router history={browserHistory}>
