@@ -1,9 +1,19 @@
 import React from 'react';
 
-const App= () => (
-  <div>
-    App
-  </div>
-);
 
-export default App;
+const BaseComp = () => {
+  return (
+    <div>
+      base BaseComp
+    </div>
+  );
+}
+
+const newComp = (BaseComp instanceof Function) ?
+    {render: BaseComp} :
+    BaseComp
+
+console.log(' new comp ', newComp);
+
+
+export default BaseComp;
