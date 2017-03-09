@@ -25,9 +25,8 @@ header {
     padding-left: 10%;
     li {
       &:hover {
-        background: #3498db;
+        background: #efefef;
         transform: scale(1.05);
-        color: white;
         cursor: pointer;
         transition: transform 0.5s;
       }
@@ -36,6 +35,11 @@ header {
 
 .sidebar-li {
   padding: 0.5em;
+  text-transform: capitalize;
+  &.active {
+    background-color: #3498db;
+    color: black;
+  }
 }
 
 .app-header {

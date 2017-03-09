@@ -18,7 +18,7 @@ const renderNews = (activeSource, data) => {
 
 const NewsFeed = props => (
   <div className="news-feed">
-    { props.newsApicallSuccess ? renderNews(props.activeSource, props.newsData) : null }
+    { (props.newsApicallSuccess && !props.activeCategoryChanged) ? renderNews(props.activeSource, props.newsData) : null }
   </div>
 );
 
@@ -29,6 +29,7 @@ NewsFeed.propTypes = {
   ]),
   newsApicallSuccess: React.PropTypes.bool.isRequired,
   activeSource: React.PropTypes.string,
+  activeCategoryChanged: React.PropTypes.bool.isRequired,
 };
 
 NewsFeed.defaultProps = {

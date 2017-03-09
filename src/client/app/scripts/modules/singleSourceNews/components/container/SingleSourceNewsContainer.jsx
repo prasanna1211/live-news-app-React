@@ -4,7 +4,15 @@ import { bindActionCreators } from 'redux';
 import SourceSelect from '../presentational/SourceSelect.jsx';
 import NewsFeed from '../presentational/NewsFeed.jsx';
 import { sourceFetchActionCreators, newsFetchActionCreators } from '../../actionCreators/actionCreators.js';
-import { getSourceList, getSourceListInitiatedStatus, getSourceListSuccessStatus, getNewsData, getNewsInitiatedStatus, getNewsSuccessStatus } from '../../selectors/selectors.js';
+import {
+  getSourceList,
+  getSourceListInitiatedStatus,
+  getSourceListSuccessStatus,
+  getNewsData,
+  getNewsInitiatedStatus,
+  getNewsSuccessStatus,
+  getActiveCategory,
+} from '../../selectors/selectors.js';
 
 export class SingleSourceNewsContainer extends React.Component {
 
@@ -13,6 +21,7 @@ export class SingleSourceNewsContainer extends React.Component {
 
     this.state = {
       activeSource: '',
+      activeCategory: false,
     };
     this.onChangeSource = this.onChangeSource.bind(this);
   }
@@ -21,9 +30,16 @@ export class SingleSourceNewsContainer extends React.Component {
     this.props.sourceFetchAction();
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillReceiveProps(nextProps) {
+    if (this.props.activeSelectedCategory !== nextProps.activeSelectedCategory) {
+      this.setState({
+        activeCategory: true,
+      });
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) { // eslint-disable-line
     if (this.state.activeSource !== nextState.activeSource) {
-      // Fetch the news of this source
       this.props.newsFetchAction(nextState.activeSource, 'top');
     }
   }
@@ -31,6 +47,7 @@ export class SingleSourceNewsContainer extends React.Component {
   onChangeSource(activeSource) {
     this.setState({
       activeSource,
+      activeCategory: false,
     });
   }
 
@@ -45,6 +62,7 @@ export class SingleSourceNewsContainer extends React.Component {
         />
         <NewsFeed
           activeSource={this.state.activeSource}
+          activeCategoryChanged={this.state.activeCategory}
           newsData={this.props.newsData}
           newsApicallInitiated={this.props.newsApicallInitiated}
           newsApicallSuccess={this.props.newsApicallSuccess}
@@ -66,6 +84,7 @@ SingleSourceNewsContainer.propTypes = {
   sourceListApicallSuccess: React.PropTypes.bool,
   newsApicallInitiated: React.PropTypes.bool,
   newsApicallSuccess: React.PropTypes.bool,
+  activeSelectedCategory: React.PropTypes.string.isRequired,
 };
 
 SingleSourceNewsContainer.defaultProps = {
@@ -84,6 +103,7 @@ export const mapStateToProps = (state) => {
     newsApicallInitiated: getNewsInitiatedStatus(state),
     newsApicallSuccess: getNewsSuccessStatus(state),
     newsData: getNewsData(state),
+    activeSelectedCategory: getActiveCategory(state),
   };
 };
 
