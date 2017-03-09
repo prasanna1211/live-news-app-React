@@ -3,10 +3,10 @@
  */
 import React from 'react';
 import { Route } from 'react-router';
-import App from 'scripts/modules/demo/components/presentational/App.jsx';
+import App from './components/presentational/App.jsx';
 
 const DemoModuleRoutes = (
-  <Route path="/" component={App} />
+  <Route path="/demo" component={App} />
 );
 
 export default DemoModuleRoutes;

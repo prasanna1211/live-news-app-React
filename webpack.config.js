@@ -66,6 +66,9 @@ const config = {
   eslint: {
     configFile: './.eslintrc',
   },
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
 module.exports = config;
