@@ -13,22 +13,49 @@ header {
   padding: 1em;
   text-align: center;
 }
-.main-wrapper {
-  display: flex;
+@media screen and (max-width: 1920px) {
+  .main-wrapper {
+    display: flex;
+  }
+  .sidebar-wrapper {
+    width: 15%;
+    margin-top: 2em;
+  }
+  .content-wrapper {
+    width: 70%;
+  }
 }
 
-.sidebar-wrapper {
-  width: 15%;
-  margin-top: 2em;
+@media screen and (max-width: 860px) {
+  .main-wrapper {
+    display: block;
+    margin: auto;
+  }
+  .sidebar-wrapper {
+    width: 25%;
+    margin: auto;
+  }
+  .content-wrapper {
+    width: 70%;
+    margin: auto;
+  }
+  .source-select {
+    margin: auto;
+  }
 }
 
-.content-wrapper {
-  width: 70%;
+.sidebar-header {
+  text-align: center;
 }
 .sidebar-ul {
     list-style-type: none;
     padding-left: 10%;
-    li {
+    li.sidebar-header {
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+    li.sidebar-li {
       &:hover {
         background: #efefef;
         transform: scale(1.05);
