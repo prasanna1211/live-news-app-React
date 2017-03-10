@@ -25,7 +25,19 @@ header {
     width: 70%;
   }
   .content {
-    margin-left: 5em;
+    margin: auto;
+  }
+}
+.sidebar-ul {
+  list-style-type: none;
+  padding-left: 10%;
+  li.sidebar-li {
+    &:hover {
+      background: #efefef;
+      transform: scale(1.05);
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
   }
 }
 
@@ -35,7 +47,7 @@ header {
     margin: auto;
   }
   .sidebar-wrapper {
-    width: 25%;
+    width: 100%;
     margin: auto;
   }
   .content-wrapper {
@@ -44,33 +56,22 @@ header {
   }
   .source-select {
    width: 50%;
-   margin: auto;
+
   }
   .content {
     margin-left: 0;
+  }
+  .sidebar-ul {
+    li.sidebar-li {
+      display: inline-block;
+    }
   }
 }
 
 .sidebar-header {
   text-align: center;
 }
-.sidebar-ul {
-    list-style-type: none;
-    padding-left: 10%;
-    li.sidebar-header {
-      &:hover {
-        transform: scale(1.5);
-      }
-    }
-    li.sidebar-li {
-      &:hover {
-        background: #efefef;
-        transform: scale(1.05);
-        cursor: pointer;
-        transition: transform 0.5s;
-      }
-    }
-  }
+
 
 .sidebar-li {
   padding: 0.5em;

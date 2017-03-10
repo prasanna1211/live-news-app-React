@@ -25,12 +25,6 @@ const renderCategories = (categories, onSelectHandler, activeNewsType) => {
 
 const Sidebar = props => (
   <ul className="sidebar-ul">
-    <li
-      key="1"
-      className="sidebar-header"
-    >
-      +
-    </li>
     {renderCategories(props.categories, props.selectActiveNewsType, props.activeNewsType)}
   </ul>
 );
