@@ -107,3 +107,54 @@ img {
 .content-header {
   font-weight: bold;
 }
+
+.trial {
+  margin: 100px;
+}
+
+input.input {
+  border: 0;
+  &:focus {
+    border: 0;
+    outline: none;
+  }
+}
+
+.underline {
+  height: 4px;
+  width: 196px;
+  display: block;
+  &:before {
+    position: absolute;
+    top: 172px;
+    content: '';
+    z-index: -1;
+    width: 196px;
+    height: 4px;
+    background: #6a7989;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    width: 196px;
+    height: 4px;
+    background: #6a7989;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+  }
+}
+.input {
+  background: transparent;
+  color: #AFB5BB;
+  &:focus+.underline:before {
+    transform: translateY(-10px);
+    transition: all 0.5s;
+  }
+  &:focus+.underline:after {
+    transform: translateY(10px);
+    transition: all 0.5s;
+  }
+}

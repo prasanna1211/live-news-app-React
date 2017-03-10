@@ -54,6 +54,7 @@ export class SingleSourceNewsContainer extends React.Component {
   render() {
     return (
       <div className="content">
+
         <SourceSelect
           onChangeSource={this.onChangeSource}
           options={this.props.sourceList}
