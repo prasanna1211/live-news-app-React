@@ -13,11 +13,13 @@ const Layout = (props) => {
       <div>
         <Navbar />
       </div>
-      <div className="sidebar-wrapper">
-        <Sidebar />
-      </div>
-      <div className="content-wrapper">
-        {props.children}
+      <div className="main-wrapper">
+        <div className="sidebar-wrapper">
+          <Sidebar />
+        </div>
+        <div className="content-wrapper">
+          {props.children}
+        </div>
       </div>
     </div>
   );

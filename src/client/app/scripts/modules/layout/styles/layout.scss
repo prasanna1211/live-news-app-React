@@ -13,13 +13,18 @@ header {
   padding: 1em;
   text-align: center;
 }
+.main-wrapper {
+  display: flex;
+}
 
 .sidebar-wrapper {
-  float: left;
   width: 15%;
   margin-top: 2em;
 }
 
+.content-wrapper {
+  width: 70%;
+}
 .sidebar-ul {
     list-style-type: none;
     padding-left: 10%;
